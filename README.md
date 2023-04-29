@@ -16,15 +16,24 @@ One approach for incorporating uncertainty in Deep Learning models is **Bayesian
 Regarding epistemic uncertainty, the main BDL techniques that aim to tackle this problem are: 
 
 - **Ensembles**: train N models with different architectures, hyperparameters, or initial weights [^4]. As result, you may combine their predictions to produce a more accurate final prediction -i.e average among model predictions- and uncertainty estimation -i.e variance among model predictions.
+
+
 ![.](/Images/Ensembles.PNG)
 
+
 - **MC Dropout**: extrapolates Dropout regularization technique to test time [^5]. It performs several forward passes randomly dropping out different hidden units during each one. As result, it generates multiple predictions for a given input, which can be used to estimate the model's uncertainty as before.
+
+
 ![.](/Images/MC-Dropout.PNG)
 
 - **Laplace**: Laplace Approximation, originally introduced by David Mackay in 1992 [^6], has gained increasing attention in recent years [^7], [^8]. It approximates the posterior distribution of model's parameters through a Gaussian distribution, allowing for inference and avoiding overconfidence. More detailly,
 $$p(\pmb{\theta}|\mathcal{D}) = \frac{p(\mathcal{D}|\pmb{\theta})p(\pmb{\theta})}{p(\mathcal{D})} = \frac{1}{Z}g(\pmb{\theta}).$$
 Then, it approximates $g(\pmb{\theta})$ following next steps,
+
+
 ![.](/Images/Laplace.PNG)
+
+
 As result, it gets,
 $$p(\pmb{\theta}|\mathcal{D}) \approx  \mathcal{N}(\pmb{\theta}_{MAP}, \mathbf{H}^{-1}).$$ 
 Currently, Laplace approximation can be easily implemented in NN with the library designed by Immer et. al [^9]. However, the main bottleneck of this technique comes from computation and memory.
@@ -35,7 +44,11 @@ Here, we provide some notebooks in which we compare these approaches leveraging 
 ![.](/Images/SimulatedRegDataset.PNG)
 
 ## Results
+Eventually, the performance of previous techniques in both datasets is, 
 ![.](/Images/BDLResults.PNG)
+In fact, this performance may be visualized in the next plots,
+![.](/Images/BDLIntro.PNG)
+![.](/Images/BostonBDLIntro.PNG)
 
 ## Bibliography
 [^1]: Yiwoong Choi, Dayoung Chun, Hyun Kim, and Hyuk-Jae Lee. Gaussian yolov3: An accurate and fast object detector using localization uncertainty for autonomous driving. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 502–511, 2019.
