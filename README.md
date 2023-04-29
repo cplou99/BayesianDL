@@ -46,9 +46,11 @@ Here, we provide some notebooks in which we compare these approaches leveraging 
 ## Results
 Eventually, the performance of previous techniques in both datasets is, 
 ![.](/Images/BDLResults.PNG)
-In fact, this performance may be visualized in the next plots,
+In fact, this performance may be visualized in the next plots.
+### Simulated Dataset
 ![.](/Images/BDLIntro.PNG)
-![.](/Images/BostonBDLIntro.PNG)
+### Boston Dataset
+![.](/Images/BostonBDLTechniques.PNG)
 
 ## Bibliography
 [^1]: Yiwoong Choi, Dayoung Chun, Hyun Kim, and Hyuk-Jae Lee. Gaussian yolov3: An accurate and fast object detector using localization uncertainty for autonomous driving. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 502–511, 2019.
