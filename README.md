@@ -10,7 +10,7 @@ Therefore, measuring the uncertainty of Deep Learning models is essential to ens
 ## Estimating uncertainty in DL
 ### Aleatoric uncertainty
 One approach for incorporating uncertainty in Deep Learning models is **Bayesian Deep Learning (BDL)**. The main altenative to incorporate aleatoric uncertainty in Neural Networks (NN) is to add a "head" at the end of the network to predict the variance (two ''heads'' BNN). Hence, the predicted output variance is input-dependent (heterocedastic).
-![.](/Images/TwoHeadsBNN.PNG)
+![.](/Images/OnevsTwoHeadsBNN.PNG)
 
 ### Epistemic uncertainty
 Regarding epistemic uncertainty, the main BDL techniques that aim to tackle this problem are: 
@@ -21,13 +21,21 @@ Regarding epistemic uncertainty, the main BDL techniques that aim to tackle this
 - **MC Dropout**: extrapolates Dropout regularization technique to test time [^2]. It performs several forward passes randomly dropping out different hidden units during each one. As result, it generates multiple predictions for a given input, which can be used to estimate the model's uncertainty as before.
 ![.](/Images/MC-Dropout.PNG)
 
-- **Laplace**: Laplace Approximation, originally introduced by David Mackay in 1992 [^3], has gained increasing attention in recent years. It approximates the posterior distribution of model's parameters through a Gaussian distribution, allowing for inference and avoiding overconfidence. However, the main bottleneck of this technique comes from computation and memory resources.
+- **Laplace**: Laplace Approximation, originally introduced by David Mackay in 1992 [^3], has gained increasing attention in recent years. It approximates the posterior distribution of model's parameters through a Gaussian distribution, allowing for inference and avoiding overconfidence. More detailly,
+$$p(\pmb{\theta}|\mathcal{D}) = \frac{p(\mathcal{D}|\pmb{\theta})p(\pmb{\theta})}{p(\mathcal{D})} = \frac{1}{Z}g(\pmb{\theta}).$$
+Then, it approximates $g(\pmb{\theta})$ following next steps,
+![.](/Images/Laplace.PNG)
+As result, it gets,
+$$p(\pmb{\theta}|\mathcal{D}) \approx  \mathcal{N}(\pmb{\theta}_{MAP}, \mathbf{H}^{-1}).$$ 
+Currently, Laplace approximation can be easily implemented in NN with the library created by Immer et. al . However, the main bottleneck of this technique comes from computation and memory.
 
 
 ## Contribution
-Here, we provide some notebooks in which we compare these approaches leveraging two Regression datasets: a Simulated dataset and Boston dataset. The Simulated dataset was designed to describe the meaning of both aleatoric and epistemic uncertainty and, hence, how the BDL techniques should estimate them. We compare them in terms of accuracy (MAE), calibration (AUSE) and likelihood (NLL). Specifically, to implement Laplace approximation we use the library created by Immer et. al .
+Here, we provide some notebooks in which we compare these approaches leveraging two Regression datasets: a Simulated dataset and Boston dataset. The Simulated dataset was designed to describe the meaning of both aleatoric and epistemic uncertainty and, hence, how the BDL techniques should estimate them. We compare them in terms of accuracy (MAE), calibration (AUSE) and likelihood (NLL). 
 ![.](/Images/SimulatedRegDataset.PNG)
 
+## Results
+![.](/Images/Results.PNG)
 
 ## Bibliography
 [^1]: \cite{lakshminarayanan2017simple}
