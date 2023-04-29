@@ -35,7 +35,7 @@ Here, we provide some notebooks in which we compare these approaches leveraging 
 ![.](/Images/SimulatedRegDataset.PNG)
 
 ## Results
-![.](/Images/Results.PNG)
+![.](/Images/ResultsBDL.PNG)
 
 ## Bibliography
 [^1]: \cite{lakshminarayanan2017simple}
