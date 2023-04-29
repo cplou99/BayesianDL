@@ -1,5 +1,5 @@
 # BayesianDL
-![.](/Images/BDLTechniques.PNG)
+![.](/Images/BDLIntro.PNG)
 
 ## Motivation
 Deep Learning (DL) models are not infallible yet, and their reliability is crucial in applications such as medical diagnosis and autonomous driving, where the consequences of model's mistakes can be fatal. 
