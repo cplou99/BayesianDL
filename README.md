@@ -9,7 +9,7 @@ Therefore, measuring the uncertainty of Deep Learning models is essential to ens
 
 ## Estimating uncertainty in DL
 ### Aleatoric uncertainty
-One approach for incorporating uncertainty in Deep Learning models is **Bayesian Deep Learning (BDL)**. The main altenative to incorporate aleatoric uncertainty in Neural Networks (NN) is to add a "head" at the end of the network to predict the variance (two ''heads'' BNN). Hence, the predicted output variance is input-dependent.
+One approach for incorporating uncertainty in Deep Learning models is **Bayesian Deep Learning (BDL)**. The main altenative to incorporate aleatoric uncertainty in Neural Networks (NN) is to add a "head" at the end of the network to predict the variance (two ''heads'' BNN). Hence, the predicted output variance is input-dependent (heterocedastic).
 ![.](/Images/TwoHeadsBNN.PNG)
 
 ### Epistemic uncertainty
@@ -26,7 +26,7 @@ Regarding epistemic uncertainty, the main BDL techniques that aim to tackle this
 
 ## Contribution
 Here, we provide some notebooks in which we compare these approaches leveraging two Regression datasets: a Simulated dataset and Boston dataset. The Simulated dataset was designed to describe the meaning of both aleatoric and epistemic uncertainty and, hence, how the BDL techniques should estimate them. We compare them in terms of accuracy (MAE), calibration (AUSE) and likelihood (NLL). Specifically, to implement Laplace approximation we use the library created by Immer et. al .
-![.](/Images/SimRegDataset.PNG)
+![.](/Images/SimulatedRegDataset.PNG)
 
 
 ## Bibliography
