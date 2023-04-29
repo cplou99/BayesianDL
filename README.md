@@ -3,7 +3,7 @@
 
 ## Motivation
 Deep Learning (DL) models are not infallible yet, and their reliability is crucial in applications such as medical diagnosis and autonomous driving, where the consequences of model's mistakes can be fatal. 
-![.](/Images/MotivationBDL.PNG)
+![.](/Images/BDLMotivation.PNG)
 
 Therefore, measuring the uncertainty of Deep Learning models is essential to ensure their safety and reliability. There are two types of uncertainty that are typically considered: **epistemic uncertainty** refers to the model uncertainty that arises from a lack of knowledge or information about the system being modeled and **aleatoric uncertainty** which comes from random variations or noise in the system.
 
