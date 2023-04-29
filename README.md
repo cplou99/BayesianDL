@@ -3,7 +3,7 @@
 
 ## Motivation
 Deep Learning (DL) models are not infallible yet, and their reliability is crucial in applications such as medical diagnosis and autonomous driving, where the consequences of model's mistakes can be fatal. 
-![.](/Images/BDLMotivation.PNG)
+![[^1]](/Images/BDLMotivation.PNG)
 
 Therefore, measuring the uncertainty of Deep Learning models is essential to ensure their safety and reliability. There are two types of uncertainty that are typically considered: **epistemic uncertainty** refers to the model uncertainty that arises from a lack of knowledge or information about the system being modeled and **aleatoric uncertainty** which comes from random variations or noise in the system.
 
@@ -27,7 +27,7 @@ Then, it approximates $g(\pmb{\theta})$ following next steps,
 ![.](/Images/Laplace.PNG)
 As result, it gets,
 $$p(\pmb{\theta}|\mathcal{D}) \approx  \mathcal{N}(\pmb{\theta}_{MAP}, \mathbf{H}^{-1}).$$ 
-Currently, Laplace approximation can be easily implemented in NN with the library created by Immer et. al . However, the main bottleneck of this technique comes from computation and memory.
+Currently, Laplace approximation can be easily implemented in NN with the library designed by Immer et. al [^5]. However, the main bottleneck of this technique comes from computation and memory.
 
 
 ## Contribution
@@ -38,6 +38,9 @@ Here, we provide some notebooks in which we compare these approaches leveraging 
 ![.](/Images/BDLResults.PNG)
 
 ## Bibliography
-[^1]: \cite{lakshminarayanan2017simple}
-[^2]: \cite{gal2016dropout}
-[^3]: \cite{mackay1992bayesian}
+[^1]: https://brendanhasz.github.io/2019/07/23/bayesian-density-net.html
+[^2]: Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and scalable predictive uncertainty estimation using deep ensembles. Advances in neural information processing systems, 30, 2017
+[^3]: Yarin Gal and Zoubin Ghahramani. Dropout as a bayesian approximation: Representing model uncertainty in deep learning. In international conference on machine learning, pages 1050–1059. PMLR, 2016.
+[^4]: David JC MacKay. Bayesian interpolation. Neural computation, 4(3):415–447, 1992.
+[^5]:  https://github.com/AlexImmer/Laplace.
+
